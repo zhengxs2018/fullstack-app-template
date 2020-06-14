@@ -16,7 +16,7 @@
 
 ## 目录结构
 
-```bash
+```text
 ├── app/
 |   ├── setup.ts                              # 启动脚本
 |   ├── main.ts                               # 应用入口
