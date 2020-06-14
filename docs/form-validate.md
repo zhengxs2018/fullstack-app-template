@@ -8,10 +8,12 @@
 
 ## 一、 编写验证规则
 
-在 `app/contract/request` 目录，新建 `auth.js` 文件:
+在 `app/contract/request` 目录，新建 `auth.ts` 文件:
 
-```javascript
-const LoginFormRules = {
+```typescript
+import { Rules } from '../../shared/parameter'
+
+export const LoginFormRules: Rules = {
   username: {
     type: 'string',
     min: 4,
@@ -24,20 +26,17 @@ const LoginFormRules = {
     required: true,
   },
 }
-
-module.exports = { LoginFormRules }
 ```
 
 ## 二、编写控制器
 
-在 `app/modules/api/endpoints` 目录，新建 `auth.js` 文件:
+在 `app/modules/api/endpoints` 目录，新建 `auth.ts` 文件:
 
 ```javascript
 // 引入表单验证规则
-const { LoginFormRules } = require('../../../contract/request/auth')
+import { LoginFormRules } from '../../../contract/request/auth'
 
-
-async function login(ctx) {
+export async function login(ctx) {
   // 获取表单数据
   // ctx.request.body 是 koa-bodyparser 解析后设置的
   const formData = ctx.request.body
@@ -48,10 +47,6 @@ async function login(ctx) {
   ctx.validate(LoginFormRules, formData)
 
   // 进行其他操作
-}
-
-module.exports = {
-  login
 }
 ```
 

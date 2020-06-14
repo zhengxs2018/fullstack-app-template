@@ -22,24 +22,8 @@ model User {
   avatar          String? // 头像
   nickname        String?           @unique
   isAdmin         Boolean           @default(false) // 是否管理员
-  inactive        Boolean           @default(false) // 是否活跃账号
   createdBy       Int               @default(-1) // 创建人
   createdAt       DateTime          @default(now()) // 创建时间
   updatedBy       Int               @default(-1) // 修改人
   updatedAt       DateTime?         @updatedAt // 修改时间
-  ActivityLogs    UserActivityLog[] // 用户活动日志记录表
-}
-
-// 用户活动日志记录表
-model UserActivityLog {
-  id        Int      @id @default(autoincrement())
-  userId    Int
-  User      User     @relation(fields: [userId], references: [id])
-  type      String // 记录类型: login
-  clientIp  String // 客户端 ip
-  userAgent String // 用户代理
-  logLevel  Int // 类型: 级别
-  logMsg    String // 日志消息
-  createdBy Int // 创建人
-  createdAt DateTime @default(now()) // 创建时间
 }

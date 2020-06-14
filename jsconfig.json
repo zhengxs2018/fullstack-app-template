@@ -1,5 +1,0 @@
-{
-  "compilerOptions": {},
-  "include": ["./app/**/*.js", "./config/**/*.js"],
-  "exclude": ["node_modules"]
-}

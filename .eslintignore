@@ -1,7 +1,15 @@
+**/node_modules/**
 .history
-**/node_modules
 
 **/static/**
-**/templates/**
+**/template/**
 
 migrations/
+
+coverage/
+
+dist/
+
+run/
+
+ecosystem.config.js
