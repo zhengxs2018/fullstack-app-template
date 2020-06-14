@@ -22,7 +22,7 @@ async function json(ctx) {
 const html = swagger({
   routePrefix: false,
   swaggerOptions: {
-    url: '/api/swagger-ui/schema.json',
+    url: '/api/docs/schema.json',
     supportedSubmitMethods: ['GET', 'POST']
   },
 })

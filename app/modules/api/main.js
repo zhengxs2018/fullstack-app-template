@@ -20,8 +20,8 @@ bp.use(errorhandler)
 if (process.env.NODE_ENV === 'development') {
   const SwaggerUI = require('./swagger-ui')
 
-  bp.get('/swagger-ui', SwaggerUI.html)
-  bp.get('/swagger-ui/schema.json', SwaggerUI.json)
+  bp.get('/docs', SwaggerUI.html)
+  bp.get('/docs/schema.json', SwaggerUI.json)
 }
 
 bp.post('/auth/login', Auth.login)
