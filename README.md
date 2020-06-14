@@ -27,15 +27,19 @@
 ├── src/
 |   ├── setup.ts                              # 启动脚本
 |   ├── main.ts                               # 应用入口
+|   ├── config/                                   # 应用配置 
+|   |   ├── default.ts  
+|   |   ├── development.ts
+|   |   └── production.ts
 |   ├── contract/
 |   |   ├── request/                          # 表单验证规则和输入字段定义
 |   |   ├── response/                         # 输出数据转换和安全字段拦截
 |   |   └── *.yaml                            # swagger ui 定义文件
 |   ├── db/ 
-|   |   └── client.js                         # @prisma/client 实例对象
+|   |   └── client.ts                         # @prisma/client 实例对象
 |   ├── extend/
-|   |   ├── application.js
-|   |   └── context.js
+|   |   ├── application.ts
+|   |   └── context.ts
 |   ├── shared/                                  # 公共代码 
 |   ├── middleware/                           # 中间件函数
 |   ├── modules/  
@@ -56,12 +60,7 @@
 |   |       ├── templates/                    # 模板文件
 |   |       └── main.ts                       # 模块入口
 |   └── service/                              # 内部调用服务
-├── config/                                   # 应用配置 
-|   ├── default.js  
-|   ├── development.js
-|   └── production.js
 ├── .env                                      # 环境配置文件
-├── setup.js                                  # 启动前执行文件
 ├── ecosystem.config.js                       # pm2 配置文件
 ├── tsconfig.json
 ├── schema.prisma                             # prisma 定义文件
