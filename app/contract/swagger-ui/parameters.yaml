@@ -1,0 +1,38 @@
+parameters:
+  # 分页
+  page:
+    name: page
+    type: integer
+    in: querystring
+    description: 页码
+    default: 1
+  pageSize:
+    name: pageSize
+    type: integer
+    in: querystring
+    description: 每页显示条数
+    default: 10
+  # 公共字段
+  id:
+    name: id
+    type: number
+    description: 主键
+  # 用户字段
+  username:
+    name: username
+    type: string
+    description: 用户名
+    required: true
+  password:
+    name: password
+    type: string
+    description: 密码
+    required: true
+  avatar:
+    name: avatar
+    type: string
+    description: 头像
+  nickname:
+    name: nickname
+    type: string
+    description: 昵称

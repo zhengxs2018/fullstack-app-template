@@ -1,0 +1,43 @@
+definitions:
+  User:
+    required:
+      - id
+      - isAdmin
+    properties:
+      id:
+        type: integer
+        description: id
+      username:
+        type: string
+        default: admin
+        description: 用户名
+      verified:
+        type: boolean
+        description: 账户是否验证
+      email:
+        type: string
+        default: admin@example.com
+        description: 注册邮箱
+      emailVerified:
+        type: boolean
+        description: 用户名
+      mobile:
+        type: string
+        default: 18271622119
+        description: 账户是否验证
+      mobileVerified:
+        type: boolean
+        description: 注册邮箱
+      avatar:
+        type: string
+        description: 头像
+      nickname:
+        type: string
+        default: 张三
+        description: 昵称
+      isAdmin:
+        type: boolean
+        description: 是否管理员
+      createdAt:
+        type: number
+        description: 注册时间

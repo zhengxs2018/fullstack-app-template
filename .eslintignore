@@ -1,0 +1,7 @@
+.history
+**/node_modules
+
+**/static/**
+**/templates/**
+
+migrations/

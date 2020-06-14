@@ -1,0 +1,46 @@
+{
+  "grunt.autoDetect": "off",
+  "gulp.autoDetect": "off",
+  "jake.autoDetect": "off",
+  "search.exclude": {
+    "**/.history/**": true,
+    "**/migrations/**": true,
+    "**/static/**": true,
+    "**/templates/**": true,
+    "**/coverage/**": true,
+    "**/run/**": true,
+    "package-lock.json": true,
+    "yarn.lock": true
+  },
+  "files.exclude": {
+    "**/.history/**": true,
+    "**/yarn.lock": true,
+    "**/.DS_Store": true
+  },
+  "files.watcherExclude": {
+    "**/.history/**": true,
+    "**/coverage/**": true,
+    "**/migrations/**": true,
+    "**/static/**": true,
+    "**/templates/**": true,
+    "**/run/**": true,
+    "package-lock.json": true,
+    "yarn.lock": true
+  },
+  "cSpell.words": [
+    "Logied",
+    "realname"
+  ],
+  "cSpell.ignoreWords": [
+    "devtools",
+    "bodyparser"
+  ],
+  "cSpell.ignorePaths": [
+    "**/.vscode",
+    "**/.history",
+    "**/coverage",
+    "**/dist",
+    "**/package.json",
+    "**/yarn.lock"
+  ]
+}

@@ -1,0 +1,45 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id              Int               @id @default(autoincrement())
+  username        String?           @unique // 账号
+  verified        Boolean           @default(false) // 账号是否验证
+  email           String?           @unique // 注册邮箱
+  emailVerified  Boolean           @default(false) // 注册邮箱是否验证
+  mobile          String?           @unique // 注册手机号
+  mobileVerified Boolean           @default(false) // 注册手机号是否验证
+  password        String?
+  avatar          String? // 头像
+  nickname        String?           @unique
+  isAdmin         Boolean           @default(false) // 是否管理员
+  inactive        Boolean           @default(false) // 是否活跃账号
+  createdBy       Int               @default(-1) // 创建人
+  createdAt       DateTime          @default(now()) // 创建时间
+  updatedBy       Int               @default(-1) // 修改人
+  updatedAt       DateTime?         @updatedAt // 修改时间
+  ActivityLogs    UserActivityLog[] // 用户活动日志记录表
+}
+
+// 用户活动日志记录表
+model UserActivityLog {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  User      User     @relation(fields: [userId], references: [id])
+  type      String // 记录类型: login
+  clientIp  String // 客户端 ip
+  userAgent String // 用户代理
+  logLevel  Int // 类型: 级别
+  logMsg    String // 日志消息
+  createdBy Int // 创建人
+  createdAt DateTime @default(now()) // 创建时间
+}
