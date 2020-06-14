@@ -55,7 +55,7 @@ module.exports = {
       // 可以根据服务器自身的条件进行设置
       max_memory_restart: '128G',
       // 基本上使用 pm2 就是为了生产环境用
-      // 开发环境基本都是用 nodemon 代替
+      // 开发环境基本都是用 nodemon 或其他代替
       // 所以直接设置 production 就可以了
       env: {
         NODE_ENV: 'production'

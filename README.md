@@ -63,7 +63,7 @@
 ├── .env                                      # 环境配置文件
 ├── setup.js                                  # 启动前执行文件
 ├── ecosystem.config.js                       # pm2 配置文件
-├── nodemon.json
+├── tsconfig.json
 ├── schema.prisma                             # prisma 定义文件
 └── README.md
 ```
