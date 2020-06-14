@@ -6,9 +6,13 @@
 
 ## 功能列表
 
- - 基于 [@koa/router][@koa/router] 构建的多模块功能
+ - 由 [node-config](https://github.com/lorenwest/node-config) 支持不同环境配置
+ - 由 [dotenv](https://github.com/https://github.com/motdotla/dotenv) 支持环境变量管理
+ - 基于 [@koa/router][@koa/router] 构建的蓝图功能
  - 使用 [swagger-ui][swagger-ui] 生成 api 文档
+ - 添加 [parameter](https://github.com/node-modules/parameter) 模块来支持表单验证
  - 数据库默认是 `sqlite`，可以支持其他数据，如 `mysql`，由 [prisma2][prisma2] 驱动
+ - 支持应用分层写法
 
 ## 目录结构
 
@@ -66,7 +70,7 @@
 
 ## 文档
 
-- [蓝图](./docs/module.md)
+- [蓝图](./docs/blueprint.md)
 - [表单验证](./docs/form-validate.md)
 - [部署到服务器](./docs/deploy.md)
 
