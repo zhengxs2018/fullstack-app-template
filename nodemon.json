@@ -1,8 +1,0 @@
-{
-  "delay": 1000,
-  "watch": ["app"],
-  "env": {
-    "NODE_ENV": "development"
-  },
-  "ignore": []
-}

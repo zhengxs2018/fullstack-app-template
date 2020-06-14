@@ -14,13 +14,11 @@
 
 ## 一、 编写蓝图
 
-在 `app/modules` 目录，新建 `admin` 文件夹，里面新建 `main.js` 文件
+在 `app/modules` 目录，新建 `admin` 文件夹，里面新建 `main.ts` 文件
 
-```javascript
-// 引入蓝图模块
-const { blueprint } = require('../../lib/blueprints')
+```typescript
+import { blueprint } from '../../shared/blueprints'
 
-// 实际返回的是 @koa/router 实例
 const bp = blueprint(__dirname, {
   // url 前缀，参考 @koa/router 模块的 prefix 属性
   // 无默认值
@@ -48,16 +46,17 @@ bp.get('(.*)', (ctx) => {
   ctx.render('404.html')
 })
 
-module.exports = bp
+export default bp
+
 ```
 
 ## 二、挂载蓝图
 
-在 `app.js` 文件，添加代码:
+在 `main.ts` 文件，添加代码:
 
 ```javascript
 // 引入蓝图
-const admin = require('./modules/admin/main')
+import admin from './modules/admin/main'
 
 // 第一个参数比如是 koa 实例
 app.use(admin.mount(app, {

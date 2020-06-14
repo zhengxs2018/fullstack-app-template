@@ -4,7 +4,7 @@ const pkg = require('./package.json')
 
 module.exports = {
   // pm2 是支持多应用部署的，可以将这个配置文件放置在和项目同级的地方，管理多个 node 应用
-  apps : [
+  apps: [
     {
       // 应用名称，可以在 pm2 list 中看到
       name: pkg.name,
@@ -12,7 +12,7 @@ module.exports = {
       script: pkg.main,
       // 这里需要注意一点，应用启动前需要处理一些事情
       // 所以单独存在一个 setup.js 进行处理
-      node_args: '-r ./setup.js',
+      node_args: '-r ./dist/setup.js',
       // 修改日志文件保存位置
       // 默认全局，可根据实际情况修改
       log_file: resolve(__dirname, 'run/logs/all.log'),
@@ -27,11 +27,11 @@ module.exports = {
       // 可以根据服务器自身的条件进行设置
       max_memory_restart: '128M',
       // 基本上使用 pm2 就是为了生产环境用
-      // 开发环境基本都是用 nodemon 代替
+      // 开发环境基本都是用 nodemon 或其他代替
       // 所以直接设置 production 就可以了
       env: {
-        NODE_ENV: 'production'
-      }
-    }
-  ]
+        NODE_ENV: 'production',
+      },
+    },
+  ],
 }

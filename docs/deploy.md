@@ -1,7 +1,5 @@
 # 部署到服务器
 
-[nodejs][nodejs] 应用的代码除非使用了 `esm` 模块或使用 [typescript][typescript] 外，基本上是无需编译的。
-
 目前前端应用大部分都是用 [pm2][pm2] 进行管理的，主要是为了防止程序异常导致应用意外中断退出。
 
 ## 一、pm2 部署
@@ -57,7 +55,7 @@ module.exports = {
       // 可以根据服务器自身的条件进行设置
       max_memory_restart: '128G',
       // 基本上使用 pm2 就是为了生产环境用
-      // 开发环境基本都是用 nodemon 代替
+      // 开发环境基本都是用 nodemon 或其他代替
       // 所以直接设置 production 就可以了
       env: {
         NODE_ENV: 'production'

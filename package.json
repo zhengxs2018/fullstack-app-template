@@ -2,23 +2,24 @@
   "name": "fullstack-app-template",
   "private": true,
   "version": "0.0.1",
-  "description": "koa 应用模板",
+  "description": "一个完善的基于 koa.js 开发的全栈应用模板，可在生产项目中使用。",
   "keywords": [
     "koa",
-    "app"
+    "fullstack",
+    "typescript",
+    "template"
   ],
   "main": "./app/main.js",
   "scripts": {
-    "start": "node -r ./setup.js ./app/main.js",
-    "dev": "nodemon -r ./setup.js ./app/main.js",
-    "debug": "nodemon --inspect -r ./setup.js ./app/main.js",
-    "debug:prod": "node --inspect -r ./setup.js ./app/main.js",
-    "lint": "npm run lint:code && npm run lint:resource",
-    "lint:code": "eslint app/**/*.js *.js --fix",
-    "lint:resource": "prettier \"app/**/*.{json,yaml}\" *.json --write",
+    "start": "node -r ./dist/setup.js ./dist/main.js",
+    "inspect": "node --inspect -r ./dist/setup.js ./dist/main.js",
+    "dev": "tsnd -r ./src/setup.ts ./src/main.ts",
+    "debug": "tsnd --inspect -r ./src/setup.js ./src/main.ts",
+    "build": "tsc --project tsconfig.json",
+    "lint": "eslint \"src/**/*.ts\" --fix",
     "db:up": "npm run db:client:gen && npm run db:migrate:gen && npm run db:migrate:up",
     "db:client:gen": "prisma generate",
-    "db:migrate:gen": "prisma migrate save --name app --experimental",
+    "db:migrate:gen": "prisma migrate save --name fullstack --experimental",
     "db:migrate:up": "prisma migrate up --experimental",
     "db:studio": "npx prisma studio  --experimental"
   },
@@ -28,11 +29,11 @@
     }
   },
   "lint-staged": {
-    "*.json": [
+    "*.{js,json}": [
       "prettier --write",
       "git add"
     ],
-    "*.js": [
+    "*.ts": [
       "eslint --fix",
       "git add"
     ]
@@ -59,7 +60,6 @@
     "sqlite": "^4.0.11"
   },
   "devDependencies": {
-    "@babel/core": "^7.10.2",
     "@prisma/cli": "^2.0.0",
     "@types/bcrypt": "^3.0.0",
     "@types/config": "^0.0.36",
@@ -67,6 +67,7 @@
     "@types/koa": "^2.11.3",
     "@types/koa-bodyparser": "^4.3.0",
     "@types/koa-mount": "^4.0.0",
+    "@types/koa-redis": "^4.0.0",
     "@types/koa-session": "^5.10.2",
     "@types/koa-static": "^4.0.1",
     "@types/koa__router": "^8.0.2",
@@ -74,21 +75,19 @@
     "@types/mkdirp": "^1.0.1",
     "@types/node": "^14.0.13",
     "@types/nunjucks": "^3.1.3",
-    "babel-eslint": "^10.1.0",
+    "@types/swagger-jsdoc": "^3.0.2",
+    "@typescript-eslint/eslint-plugin": "^3.2.0",
+    "@typescript-eslint/parser": "^3.2.0",
     "chokidar": "^3.4.0",
     "eslint": "^7.2.0",
     "eslint-config-prettier": "^6.11.0",
-    "eslint-config-standard": "^14.1.1",
-    "eslint-plugin-import": "^2.21.2",
-    "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.1.3",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.10",
-    "nodemon": "^2.0.4",
     "prettier": "^2.0.5",
-    "swagger-jsdoc": "^4.0.0"
+    "swagger-jsdoc": "^4.0.0",
+    "ts-node-dev": "^1.0.0-pre.47",
+    "typescript": "^3.9.5"
   },
   "engines": {
     "node": ">= 12.x",
