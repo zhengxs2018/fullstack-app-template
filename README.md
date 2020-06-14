@@ -99,11 +99,30 @@ $ npm run debug
 
 更多 `npm version` 的命令可使用 `npm version --help` 查看
 
+## 感谢
+
+感谢以下开源项目给予的灵感和帮助，以下排名不分先后。
+
+* [koa.js][koa.js]
+* [@koa/router][@koa/router]
+* [swagger-ui][swagger-ui]
+* [prisma2][prisma2]
+* [dotenv][dotenv]
+* [parameter][parameter]
+* [flask][flask]
+* [nunjucks][nunjucks]
+* And more.
+
 ## License
 
 * MIT
 
 [koa.js]: https://github.com/koajs/koa
 [@koa/router]: https://github.com/koajs/router
-[swagger-ui]: https://swagger.io/tools/swagger-ui/
+[swagger-ui]: https://swagger.io/
 [prisma2]: https://github.com/prisma/prisma
+[node-config]: https://github.com/lorenwest/node-config
+[dotenv]: https://github.com/https://github.com/motdotla/dotenv
+[parameter]: https://github.com/node-modules/parameter
+[flask]: https://github.com/pallets/flask
+[nunjucks]: https://github.com/mozilla/nunjucks
