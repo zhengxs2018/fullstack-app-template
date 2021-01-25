@@ -15,12 +15,9 @@
 ```bash
 # 推荐安装到全局
 $ npm i pm2 -g
-
-# 仅安装生产依赖, 进入到工程目录执行
-$ npm install --production
 ```
 
-### 3. 便携 pm2 配置文件
+### 3. 编写 pm2 配置文件
 
 可以使用 `pm2 init` 命令生成配置文件，文件名称默认为 `ecosystem.config.js`，配置项可参官方文档：[ecosystem-file](https://pm2.keymetrics.io/docs/usage/application-declaration/
 )
@@ -65,9 +62,18 @@ module.exports = {
 }
 ```
 
-### 3. 启动应用
+### 4. 安装依赖
 
-应用启动完成，推荐使用 `pm2 list` 查看应用状态，或  `pm2 log` 查看启动日志 
+进入工程目录
+
+```bash
+# 仅安装生产依赖, 进入到工程目录执行
+$ npm install --production
+```
+
+### 5. 启动应用
+
+应用启动完成，使用 `pm2 show <appName>` 或 `pm2 list` 查看应用状态，使用 `pm2 log` 查看启动日志 
 
 ```bash
 # 直接 start 配置文件就可以了，不需要加其他参数
